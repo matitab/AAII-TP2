@@ -1,0 +1,350 @@
+{
+  "clases": [
+    "yes",
+    "no",
+    "stop",
+    "go"
+  ],
+  "particiones": {
+    "train": 12575,
+    "val": 1525,
+    "test": 1637
+  },
+  "media": -55.05765801296556,
+  "desvio": 19.733548919668795,
+  "ejemplos_mel": [
+    {
+      "clase": "yes",
+      "archivo": "yes/65040d9b_nohash_1.wav",
+      "inicio": 0.256,
+      "fin": 0.672,
+      "duracion": 0.416,
+      "baja_hz": 183.327063389358,
+      "alta_hz": 5437.394047712952,
+      "pico_s": 0.288,
+      "pico_hz": 504.53530012499596
+    },
+    {
+      "clase": "yes",
+      "archivo": "yes/879a2b38_nohash_4.wav",
+      "inicio": 0.384,
+      "fin": 0.864,
+      "duracion": 0.48,
+      "baja_hz": 254.54418304835488,
+      "alta_hz": 2731.0359330824213,
+      "pico_s": 0.48,
+      "pico_hz": 504.53530012499596
+    },
+    {
+      "clase": "yes",
+      "archivo": "yes/c4e00ee9_nohash_1.wav",
+      "inicio": 0.032,
+      "fin": 0.544,
+      "duracion": 0.512,
+      "baja_hz": 292.27782225737843,
+      "alta_hz": 5204.005567707255,
+      "pico_s": 0.096,
+      "pico_hz": 458.7300836725616
+    },
+    {
+      "clase": "yes",
+      "archivo": "yes/954f190f_nohash_1.wav",
+      "inicio": 0.128,
+      "fin": 0.544,
+      "duracion": 0.416,
+      "baja_hz": 218.24545198301814,
+      "alta_hz": 5680.008498455746,
+      "pico_s": 0.16,
+      "pico_hz": 218.24545198301814
+    },
+    {
+      "clase": "yes",
+      "archivo": "yes/cdee383b_nohash_2.wav",
+      "inicio": 0.416,
+      "fin": 0.896,
+      "duracion": 0.48,
+      "baja_hz": 149.73652658014694,
+      "alta_hz": 4163.629805379767,
+      "pico_s": 0.768,
+      "pico_hz": 3800.7616302046335
+    },
+    {
+      "clase": "no",
+      "archivo": "no/d78858d9_nohash_0.wav",
+      "inicio": 0.128,
+      "fin": 0.384,
+      "duracion": 0.256,
+      "baja_hz": 292.27782225737843,
+      "alta_hz": 1293.9018415719866,
+      "pico_s": 0.256,
+      "pico_hz": 552.151221144282
+    },
+    {
+      "clase": "stop",
+      "archivo": "stop/23da904f_nohash_1.wav",
+      "inicio": 0.48,
+      "fin": 0.832,
+      "duracion": 0.352,
+      "baja_hz": 706.5932522054934,
+      "alta_hz": 1454.6576385184396,
+      "pico_s": 0.704,
+      "pico_hz": 1372.7218417817344
+    },
+    {
+      "clase": "go",
+      "archivo": "go/51f4d5b0_nohash_0.wav",
+      "inicio": 0.0,
+      "fin": 0.992,
+      "duracion": 0.992,
+      "baja_hz": 27.67137227945198,
+      "alta_hz": 762.1966315305555,
+      "pico_s": 0.896,
+      "pico_hz": 653.1043188623858
+    }
+  ],
+  "configuraciones": {
+    "E1": {
+      "filters": [
+        12,
+        24
+      ],
+      "kernel": 3,
+      "drop": 0.0,
+      "w": 16,
+      "hop": 8,
+      "cell": "GRU",
+      "hidden": 48,
+      "layers": 2,
+      "bidirectional": true,
+      "pooling": "last"
+    },
+    "E2": {
+      "filters": [
+        12,
+        20,
+        32
+      ],
+      "kernel": 3,
+      "drop": 0.15,
+      "w": 12,
+      "hop": 6,
+      "cell": "LSTM",
+      "hidden": 48,
+      "layers": 1,
+      "bidirectional": true,
+      "pooling": "mean"
+    },
+    "E3": {
+      "filters": [
+        16,
+        24
+      ],
+      "kernel": 5,
+      "drop": 0.2,
+      "w": 20,
+      "hop": 6,
+      "cell": "GRU",
+      "hidden": 64,
+      "layers": 1,
+      "bidirectional": false,
+      "pooling": "mean"
+    }
+  },
+  "corridas": {
+    "E1": {
+      "historia": [
+        {
+          "train_loss": 0.7090595570070369,
+          "train_acc": 0.6816699801192843,
+          "val_loss": 0.4921933957348104,
+          "val_acc": 0.7836065573770492
+        },
+        {
+          "train_loss": 0.46425609420592456,
+          "train_acc": 0.7927634194831014,
+          "val_loss": 0.5206371879040218,
+          "val_acc": 0.7704918032786885
+        },
+        {
+          "train_loss": 0.3868239409383201,
+          "train_acc": 0.8324453280318092,
+          "val_loss": 0.3818005209807001,
+          "val_acc": 0.84
+        },
+        {
+          "train_loss": 0.33148366105248395,
+          "train_acc": 0.8609145129224652,
+          "val_loss": 0.32700185219772526,
+          "val_acc": 0.8583606557377049
+        },
+        {
+          "train_loss": 0.2894649832267647,
+          "train_acc": 0.8807952286282306,
+          "val_loss": 0.3209736555912456,
+          "val_acc": 0.8577049180327869
+        },
+        {
+          "train_loss": 0.2688674687071302,
+          "train_acc": 0.8921669980119284,
+          "val_loss": 0.27142885891140484,
+          "val_acc": 0.8859016393442622
+        }
+      ],
+      "val": 0.8859016393442622,
+      "loss_val": 0.27142885891140484,
+      "epoca": 6,
+      "parametros": 84284,
+      "segundos": 186.41636960000324,
+      "test": 0.8924862553451436,
+      "loss_test": 0.26605443953364066
+    },
+    "E2": {
+      "historia": [
+        {
+          "train_loss": 0.7379653900233699,
+          "train_acc": 0.6708548707753479,
+          "val_loss": 0.4323836659505719,
+          "val_acc": 0.8288524590163935
+        },
+        {
+          "train_loss": 0.41567402765954703,
+          "train_acc": 0.829662027833002,
+          "val_loss": 0.32404522555284815,
+          "val_acc": 0.861639344262295
+        },
+        {
+          "train_loss": 0.34323097889039433,
+          "train_acc": 0.8636978131212724,
+          "val_loss": 0.2554895051825242,
+          "val_acc": 0.8911475409836066
+        },
+        {
+          "train_loss": 0.2723226213798845,
+          "train_acc": 0.8927236580516899,
+          "val_loss": 0.23281210327978993,
+          "val_acc": 0.9036065573770492
+        },
+        {
+          "train_loss": 0.2281827757645317,
+          "train_acc": 0.9123658051689861,
+          "val_loss": 0.17338385759807023,
+          "val_acc": 0.9311475409836065
+        },
+        {
+          "train_loss": 0.1916570971050035,
+          "train_acc": 0.9292246520874752,
+          "val_loss": 0.14533815717110868,
+          "val_acc": 0.940327868852459
+        }
+      ],
+      "val": 0.940327868852459,
+      "loss_val": 0.14533815717110868,
+      "epoca": 6,
+      "parametros": 60640,
+      "segundos": 238.64602770000056,
+      "test": 0.9462431276725718,
+      "loss_test": 0.15692210333534473
+    },
+    "E3": {
+      "historia": [
+        {
+          "train_loss": 0.7871931166037414,
+          "train_acc": 0.64779324055666,
+          "val_loss": 0.48882558025297573,
+          "val_acc": 0.7665573770491804
+        },
+        {
+          "train_loss": 0.5295421041598614,
+          "train_acc": 0.7646918489065606,
+          "val_loss": 0.397649519560767,
+          "val_acc": 0.8288524590163935
+        },
+        {
+          "train_loss": 0.435898130075121,
+          "train_acc": 0.8121669980119284,
+          "val_loss": 0.34095664234434975,
+          "val_acc": 0.8524590163934426
+        },
+        {
+          "train_loss": 0.363789602982595,
+          "train_acc": 0.8485089463220676,
+          "val_loss": 0.2658870001039544,
+          "val_acc": 0.8950819672131147
+        },
+        {
+          "train_loss": 0.3134172454434882,
+          "train_acc": 0.8738767395626242,
+          "val_loss": 0.29818257197493414,
+          "val_acc": 0.8819672131147541
+        },
+        {
+          "train_loss": 0.286606034741961,
+          "train_acc": 0.8860437375745527,
+          "val_loss": 0.19573092490923208,
+          "val_acc": 0.9232786885245902
+        }
+      ],
+      "val": 0.9232786885245902,
+      "loss_val": 0.19573092490923208,
+      "epoca": 6,
+      "parametros": 41548,
+      "segundos": 258.98177919999944,
+      "test": 0.9279169211973122,
+      "loss_test": 0.20363639660120447
+    }
+  },
+  "ganador": "E2",
+  "matriz": [
+    [
+      411,
+      1,
+      1,
+      6
+    ],
+    [
+      4,
+      383,
+      1,
+      17
+    ],
+    [
+      1,
+      0,
+      402,
+      8
+    ],
+    [
+      2,
+      45,
+      2,
+      353
+    ]
+  ],
+  "ejemplos_test": [
+    {
+      "archivo": "yes/1cb788bc_nohash_0.wav",
+      "real": "yes",
+      "pred": "stop"
+    },
+    {
+      "archivo": "yes/475b61f1_nohash_0.wav",
+      "real": "yes",
+      "pred": "go"
+    },
+    {
+      "archivo": "yes/94de6a6a_nohash_0.wav",
+      "real": "yes",
+      "pred": "go"
+    },
+    {
+      "archivo": "yes/e49428d9_nohash_3.wav",
+      "real": "yes",
+      "pred": "yes"
+    },
+    {
+      "archivo": "yes/af7a8296_nohash_3.wav",
+      "real": "yes",
+      "pred": "yes"
+    }
+  ]
+}
